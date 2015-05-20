@@ -10,10 +10,12 @@ public class JaxRSServerCodegenDelegate extends JaxRSServerCodegen {
 		return "jaxrsDelegate";
 	}
 	protected String getArgApiPackage(){
-		return "gen.api";
+            return System.getProperty("swagger.codegen.apiPackage","io.swagger.api");
+            //return "gen.api";
 	}
 	protected String getArgModelPackage(){
-		return "gen.model";
+            return System.getProperty("swagger.codegen.modelPackage","io.swagger.api");
+            //return "gen.model";
 	}
 	private String resourcePath=null;
 	protected String getArgResourcePath(){
