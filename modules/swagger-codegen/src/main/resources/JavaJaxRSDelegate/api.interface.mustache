@@ -10,12 +10,13 @@ import java.util.List;
 import {{package}}.NotFoundException;
 import java.io.InputStream;
 import com.sun.jersey.core.header.FormDataContentDisposition;
+import javax.ws.rs.core.Response;
 
 
 {{#operations}}
 public interface {{classname}}Interface {
   {{#operation}}
-  public {{#returnBaseType}}{{{returnType}}}{{/returnBaseType}}{{^returnBaseType}}void{{/returnBaseType}}{{#returnContainer}} []/*{{{returnContainer}}}*/{{/returnContainer}} {{nickname}}Impl({{#allParams}}{{>methodParams}}{{#hasMore}},{{/hasMore}}{{/allParams}})
+  public {{#returnBaseType}}Response{{/returnBaseType}}{{^returnBaseType}}void{{/returnBaseType}}{{#returnContainer}} []/*{{{returnContainer}}}*/{{/returnContainer}} {{nickname}}Impl({{#allParams}}{{>methodParams}}{{#hasMore}},{{/hasMore}}{{/allParams}})
       throws NotFoundException ;
 
   {{/operation}}

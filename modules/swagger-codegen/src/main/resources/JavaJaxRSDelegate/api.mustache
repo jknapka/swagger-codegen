@@ -75,16 +75,15 @@ public class {{classname}} {
   public Response {{nickname}}({{#allParams}}{{>queryParams}}{{>pathParams}}{{>headerParams}}{{>bodyParams}}{{>formParams}}{{#hasMore}},
     {{/hasMore}}{{/allParams}})
       throws NotFoundException {
-	  {{{returnType}}}{{#returnContainer}} []/*{{{returnContainer}}}*/{{/returnContainer}} response=null;
+	  Response response=null;
 	  try{
 		  
-		  {{#returnBaseType}}response={{/returnBaseType}}{{^returnBaseType}}{{/returnBaseType}}
-		  instance.{{nickname}}Impl({{#allParams}}{{>callMethodParams}}{{#hasMore}},{{/hasMore}}{{/allParams}});
+		  response=instance.{{nickname}}Impl({{#allParams}}{{>callMethodParams}}{{#hasMore}},{{/hasMore}}{{/allParams}});
 	  }catch(Exception e){
 		e.printStackTrace();
-		return Response.ok().entity(response).build();
+		response = Response.status(500).entity(e.getMessage()).build();
 	  }
-      return Response.ok().entity(response).build();
+      return response;
    }
 
   {{/operation}}
