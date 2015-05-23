@@ -1,6 +1,6 @@
 # Swagger Code Generator
 
-This fork makes joegnelson's delegate mechanism usable for Swagger specs that rely on multiple kinds of responses for a single path and method. The original Swagger-Codegen README is included verbatim below.
+This fork makes joegnelson's JaxRSServerCodegenDelegate generator usable for Swagger specs that rely on multiple kinds of responses for a single path and method. The original Swagger-Codegen README is included verbatim below.
 
 [![Build Status](https://travis-ci.org/swagger-api/swagger-codegen.png)](https://travis-ci.org/swagger-api/swagger-codegen)
 
