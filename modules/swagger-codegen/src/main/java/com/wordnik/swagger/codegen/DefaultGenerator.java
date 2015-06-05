@@ -103,6 +103,9 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
       } else {
         hostBuilder.append("localhost");
       }
+
+      System.out.println("basePath: "+swagger.getBasePath());
+
       if (swagger.getBasePath() != null) {
         hostBuilder.append(swagger.getBasePath());
       } else {
@@ -155,6 +158,9 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
         List<CodegenOperation> ops = paths.get(tag);
         Map<String, Object> operation = processOperations(config, tag, ops);
         operation.put("basePath", basePath);
+        String basePathRelative = contextPath;
+        if (basePathRelative.startsWith("/")) basePathRelative = basePathRelative.substring(1);
+        operation.put("basePathRelative", basePathRelative);
         operation.put("contextPath", contextPath);
         operation.put("baseName", tag);
         operation.put("modelPackage", config.modelPackage());

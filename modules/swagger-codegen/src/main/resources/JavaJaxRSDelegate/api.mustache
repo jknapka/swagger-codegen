@@ -22,8 +22,8 @@ import com.sun.jersey.multipart.FormDataParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.*;
 
-@Path("/{{baseName}}")
-@Api(value = "/{{baseName}}", description = "the {{baseName}} API")
+@Path("{{basePathRelative}}/{{baseName}}")
+@Api(value = "{{basePathRelative}}/{{baseName}}", description = "the {{baseName}} API")
 {{#operations}}
 public class {{classname}} {
 	
