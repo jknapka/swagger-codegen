@@ -13,7 +13,8 @@ generated-files/*
 generated-code/*
 *.swp
 *.swo
-
+*~
+npm-debug*
 /target
 /generated-files
 /nbactions.xml
